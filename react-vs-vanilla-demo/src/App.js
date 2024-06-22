@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
+import zz, { apikey, apikey2 as ccckey } from "./util.js"
+// import * as util from "./util.js"
 
 const content = [
   [
@@ -23,6 +25,10 @@ const content = [
 
 export default function App() {
   const [activeContentIndex, setActiveContentIndex] = useState(0);
+  
+  // console.log(apikey, apikey2, zz);
+  console.log(apikey, ccckey, zz);
+  // console.log(util.apikey, util.apikey2, util.default);
 
   return (
     <div>
