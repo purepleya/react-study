@@ -27,19 +27,36 @@ export default function App() {
   const [activeContentIndex, setActiveContentIndex] = useState(0);
 
   // console.log(apikey, apikey2, zz);
-  console.log(apikey, ccckey, zz);
+  // console.log(apikey, ccckey, zz);
   // console.log(util.apikey, util.apikey2, util.default);
 
-  const [value1, value2] = ["abc", "xyz"];
-  console.log(value1, value2);
+  // const [value1, value2] = ["abc", "xyz"];
+  // console.log(value1, value2);
+
+  // const user = {
+  //   name: "Max",
+  //   age: 34,
+  // };
+
+  // const { name: userName, age } = user;
+  // console.log(userName, age);
+
+  const hobbies = ["Sports", "Cooking"];
+  const newHobbies = ["Reading"];
+  const mergedHobies = [...hobbies, ...newHobbies];
+  console.log(mergedHobies);
 
   const user = {
     name: "Max",
     age: 34,
   };
 
-  const { name: userName, age } = user;
-  console.log(userName, age);
+  const extendUser = {
+    isAdmin: true,
+    ...user,
+  };
+
+  console.log(extendUser);
 
   return (
     <div>
