@@ -18,7 +18,7 @@ export default function UserInput() {
   
   }
 
-	return <section id="use-input">
+	return <section id="user-input">
     <div className="input-group">
       <p>
         <label>Initial Investment</label>
