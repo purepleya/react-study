@@ -17,7 +17,7 @@ const ResultModal = forwardRef(function ResultModal({ targetTime, remainingTime,
   });
 
 
-  return creatPortal (
+  return createPortal (
     <dialog ref={dialog} className="result-modal">
       {userLost && <h2>Your lost</h2>}
       {!userLost && <h2>Your Score: {score}</h2>}
