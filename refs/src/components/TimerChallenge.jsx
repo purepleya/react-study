@@ -21,7 +21,6 @@ export default function TimerChallenge({ title, targetTime }) {
     timer.current = setInterval(() => {
       setTimeRemaining(prevTimeRemaining => prevTimeRemaining - 10);
     }, 10);
-    setTimerStarted(true);
   }
 
   function handleStop() {
@@ -31,7 +30,7 @@ export default function TimerChallenge({ title, targetTime }) {
   
   return (
     <>
-      <ResultModal ref={dialog} timerTime={targetTime} result="lost" remainingTime={timeRemaining} onReset={handleReset} />
+      <ResultModal ref={dialog} targetTime={targetTime} remainingTime={timeRemaining} onReset={handleReset} />
       <section className="challenge">
         <h2>{title}</h2>
         {!timerIsActive && <p>You Lost!</p>}
