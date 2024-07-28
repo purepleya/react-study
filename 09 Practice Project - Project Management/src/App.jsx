@@ -26,8 +26,13 @@ function App() {
     });
   }
 
-  function handleDeleteTask() {
-
+  function handleDeleteTask(id) {
+    setProjectState(prevState => {
+      return {
+        ...prevState,
+        tasks: prevState.tasks.filter(task => task.id !== id)
+      };
+    });
   }
 
   function handleSelectProject(id) {
@@ -92,7 +97,7 @@ function App() {
       onDeleteTask={handleDeleteTask} 
       tasks={projectState.tasks}/>
   );
-  
+
   if (projectState.selectedProjectId === null) {
     content = <NewProject onAdd={handleAddProject} onCancel={handleCancelAddProject}/>;
   } else if (projectState.selectedProjectId === undefined) {
