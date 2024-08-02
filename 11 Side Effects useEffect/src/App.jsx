@@ -77,6 +77,7 @@ function App() {
           onCancel={handleStopRemovePlace}
           onConfirm={handleRemovePlace}
         />
+        
       </Modal>
 
       <header>
