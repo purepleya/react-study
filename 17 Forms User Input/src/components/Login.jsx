@@ -1,6 +1,11 @@
 export default function Login() {
+  function handleSubmit(event) {
+    event.preventDefault(); // 기본구성, 폼을 전송하는 HTTP 요청을 중단
+    console.log('Submitted');
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2>Login</h2>
 
       <div className="control-row">
