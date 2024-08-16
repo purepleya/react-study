@@ -1,23 +1,15 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 
 export default function Login() {
-  // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [enteredPassword, setEnteredPassword] = useState('');
-  const [enterdValues, setEnteredValues] = useState({
-    email: '',
-    password: ''
-  });
+  const email = useRef();
+  const password = useRef();
 
   function handleSubmit(event) {
     event.preventDefault(); // 기본구성, 폼을 전송하는 HTTP 요청을 중단
-    console.log(enterdValues);
-  }
+    const enteredEmail = email.current.value;
+    const enteredPassword = password.current.value;
 
-  function handleInputChange(identifier, value) {
-    setEnteredValues(preValues => ({
-      ...preValues,
-        [identifier]: value
-    }))
+    console.log(enteredEmail, enteredPassword);
   }
 
   return (
@@ -27,12 +19,12 @@ export default function Login() {
       <div className="control-row">
         <div className="control no-margin">
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" onChange={(event) => handleInputChange('email', event.target.value)} value={enterdValues.email}/>
+          <input id="email" type="email" name="email" ref={email} />
         </div>
 
         <div className="control no-margin">
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" onChange={(event) => handleInputChange('password', event.target.value)} value={enterdValues.password} />
+          <input id="password" type="password" name="password" ref={password} />
         </div>
       </div>
 
