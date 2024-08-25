@@ -19,7 +19,6 @@ const cartSlice = createSlice({
       } else {
         existingItem.quantity++;
         existingItem.totalPrice += newItem.price;
-        
       }
     },
     removeItemFromCart(state, action) {
