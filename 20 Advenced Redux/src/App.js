@@ -19,12 +19,16 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
+    console.log(cart);
     if (isInitial) {
       isInitial = false;
       return;
     }
 
-    dispatch(sendCartData(cart));
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
+
   }, [cart, dispatch]);
 
   return (
