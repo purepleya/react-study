@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"test","image":"https://images.bzyjr9ji.ext.evbdomains.com/marketing/landingpages/assets/2023/organizer/a_organizer_event--creator-eventbrite-.webp","date":"2024-09-04","description":"test description","id":"91bd0367-6df3-4441-acdd-6093ed9791d5"},{"title":"A new event","image":"https://www.google.com/imgres?q=event&imgurl=https%3A%2F%2Fwww.danonegreek.co.kr%2Fassets%2Fimages%2Fmobile%2Fevent_visu_v2.png&imgrefurl=https%3A%2F%2Fwww.danonegreek.co.kr%2Fevent&docid=S29IQNocuLJggM&tbnid=wH59bjB_CtKGvM&vet=12ahUKEwiE4Nbzrp-IAxV6sFYBHakPA2YQM3oECHEQAA..i&w=640&h=338&hcb=2&ved=2ahUKEwiE4Nbzrp-IAxV6sFYBHakPA2YQM3oECHEQAA","date":"2024-09-07","description":"Some awesome event!","id":"04987d99-dfb6-48da-b3f5-119e44ff912c"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
