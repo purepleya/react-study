@@ -8,6 +8,7 @@ export function getAuthToken() {
 export function tokenLoader() {
   return getAuthToken();
 }
+
 export function checkAuthLoader() {
   const token = getAuthToken();
   
