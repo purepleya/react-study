@@ -14,6 +14,8 @@ export default function NewEventsSection() {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ['events'], // 키의 수나 데이터 타입이 정해져 있지 않다, 임의로 정하면 된다.
     queryFn: fetchEvents,
+    staleTime: 5000, // 캐시 유지 시간(ms), 해당 시간 이전까지는 요청을 보내지 않는다. 기본은 0
+    // gcTime: 1000 // 데이터와 캐시를 얼마나 유지할지(ms), 기본 5분, 이시간이 지나면 캐시를 지워버림
   });
 
   let content;
