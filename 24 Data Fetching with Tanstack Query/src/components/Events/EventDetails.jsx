@@ -17,7 +17,8 @@ export default function EventDetails() {
     mutationFn: deleteEvent,
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ['events']
+        queryKey: ['events'],
+        refetchType: 'none' // 현재페이지의 쿼리를 재실행 하지 않는다. (삭제하는 요청이므로 정상 처리되면 404가 발생)
       });
       navigate('/events');
     }
