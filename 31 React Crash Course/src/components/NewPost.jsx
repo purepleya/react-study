@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import classes from './NewPost.module.css';
 
-function NewPost({ onCancel }) {
+function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredAuthor, setEnteredAuthor] = useState("");
   
@@ -20,7 +20,7 @@ function NewPost({ onCancel }) {
       body: enteredBody,
       author: enteredAuthor
     };
-    onCancel();
+    onAddPost(postData); 
   }
 
   return (
@@ -35,7 +35,7 @@ function NewPost({ onCancel }) {
       </p>
       <p className={classes.actions}>
         <button type='button' onClick={onCancel}>Cancel</button>
-        <button>Submit</button>
+        <button onClick={submitHandler}>Submit</button>
       </p>
     </form>
   );

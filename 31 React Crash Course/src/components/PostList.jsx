@@ -6,25 +6,17 @@ import Modal from "./Modal";
 import classes from "./PostList.module.css";
 
 function PostList({isPosting, onStopPosting}) {
-  
+  const [posts, setPosts] = useState([]);
 
-  // let modalContent;
+  function addPostHandler(postData) {
+    setPosts((existingPosts) => [postData, ...existingPosts]);
+  }
 
-  // if (modalIsVisible) {
-  //   modalContent = (
-  //     <Modal onClose={hideModalHandler}>
-  //         <NewPost
-  //           onBodyChange={bodyChangeHandler}
-  //           onAuthorChange={authorChangeHandler}
-  //         />
-  //       </Modal>
-  //   );
-  // }
   return (
     <>
       {isPosting && (
         <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} />
+          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler}/>
         </Modal>
       )}
       <ul className={classes.posts}>
