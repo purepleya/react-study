@@ -21,6 +21,7 @@ function NewPost({ onCancel, onAddPost }) {
       author: enteredAuthor
     };
     onAddPost(postData); 
+    onCancel();
   }
 
   return (
@@ -35,7 +36,7 @@ function NewPost({ onCancel, onAddPost }) {
       </p>
       <p className={classes.actions}>
         <button type='button' onClick={onCancel}>Cancel</button>
-        <button onClick={submitHandler}>Submit</button>
+        <button>Submit</button>
       </p>
     </form>
   );
