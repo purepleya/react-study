@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import NewPost from "./NewPost";
 import Post from "./Post";
-import Modal from "./Modal";
 
 import classes from "./PostList.module.css";
 
@@ -15,7 +13,7 @@ function PostList({ isPosting, onStopPosting }) {
       const response = await fetch('http://localhost:8080/posts');
       const resData = await response.json();
       if (!response.ok) {
-        
+
       }
       setPosts(resData.posts);
       setIsFetching(false);
@@ -37,11 +35,6 @@ function PostList({ isPosting, onStopPosting }) {
 
   return (
     <>
-      {isPosting && (
-        <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
-        </Modal>
-      )}
       {posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.map((post) => (
