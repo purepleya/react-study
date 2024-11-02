@@ -1,27 +1,11 @@
-import { useEffect, useState } from "react";
-import Post from "./Post";
+import { useLoaderData } from "react-router-dom";
 
+import Post from "./Post";
 import classes from "./PostList.module.css";
 
-function PostList({ isPosting, onStopPosting }) {
-  const [posts, setPosts] = useState([]);
-  const [isFetching, setIsFetching] = useState(false);
+function PostList() {
+  const posts = useLoaderData();
   
-  useEffect(() => {
-    async function fetchPosts() {
-      setIsFetching(true);
-      const response = await fetch('http://localhost:8080/posts');
-      const resData = await response.json();
-      if (!response.ok) {
-
-      }
-      setPosts(resData.posts);
-      setIsFetching(false);
-    }
-
-    fetchPosts();
-  }, []);
-
   function addPostHandler(postData) {
     fetch('http://localhost:8080/posts', {
       method: 'POST',
@@ -42,15 +26,10 @@ function PostList({ isPosting, onStopPosting }) {
           ))}
         </ul>
       )}
-      {!isFetching && posts.length === 0 && (
+      {posts.length === 0 && (
         <div style={{ textAlign: 'center', color: 'white'}}>
           <h2>There are no posts yet.</h2>
           <p>Start adding some!</p>
-        </div>
-      )}
-      {isFetching && (
-        <div style={{ textAlign: 'center', color: 'white'}}>
-          <p>Loading posts...</p>
         </div>
       )}
     </>
